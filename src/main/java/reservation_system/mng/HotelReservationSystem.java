@@ -15,9 +15,9 @@ public class HotelReservationSystem {
     public static void main(String[] args) {
 
         // JDBC URL, username, password
-        String url = "jdbc:postgresql://localhost:5432/hotel_db";
-        String user = "postgres";
-        String password = "root";
+        String url = "jdbc:postgresql://localhost:5432/db_name";
+        String user = "";
+        String password = "";
 
      // Try-catch block for connection
         try (Connection con = DriverManager.getConnection(url, user, password)) {
