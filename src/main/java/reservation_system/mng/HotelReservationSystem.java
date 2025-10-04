@@ -93,7 +93,6 @@ public class HotelReservationSystem {
             System.out.print("Enter contact number: ");
             String contactNumber = sc.nextLine();
 
-            // ✅ Always mention column names except auto-increment ones
             String insert = "INSERT INTO reservations (guest_name, room_number, contact_number) VALUES (?, ?, ?)";
             PreparedStatement p = con.prepareStatement(insert);
 
@@ -101,13 +100,13 @@ public class HotelReservationSystem {
             p.setInt(2, roomNumber);
             p.setString(3, contactNumber);
 
-            int rows = p.executeUpdate(); // ✅ use executeUpdate() for INSERT/UPDATE/DELETE
+            int rows = p.executeUpdate(); 
 
             if (rows > 0) {
                 System.out.println("✅ Reservation added successfully!");
                
             } else {
-                System.out.println("⚠️ Failed to add reservation.");
+                System.out.println("Failed to add reservation.");
             }
 
         } catch (Exception e) {
@@ -169,7 +168,6 @@ public class HotelReservationSystem {
 			    System.out.println("Room is available");
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	 
